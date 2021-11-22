@@ -1,12 +1,18 @@
-import './App.css';
+import "./App.css";
+import { BrowserRouter ,  Routes, Route } from "react-router-dom";
+import SignUp from "./components/SignUp";
+import Login from "./components/Login";
+import Chat from "./components/Chat";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-          <h2>Welcome to Ottonova</h2>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route  path="/" element={<SignUp />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/chat" element={<Chat />} />
+    </Routes>
+    </BrowserRouter>
   );
 }
 

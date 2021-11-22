@@ -1,10 +1,11 @@
 const express = require("express")
+var cors = require("cors");
 const socketio = require("socket.io");
 const http = require("http");
 const app = express()
 const authRoutes = require("./routes/auth")
 const db = require("./db/db.js")
-
+app.use(cors());
 app.use(express.json());
 const server = http.createServer(app);
 const io = socketio(server);
